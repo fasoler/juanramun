@@ -4,10 +4,136 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style2.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
-  <title>JUANRAMUN 2026 - 2 EDICIÓN</title>
+  <title>JUANRAMUN 2025 - 2ª Edición | Simulacro de Naciones Unidas</title>
+  <style>
+    /* Estilos específicos para el menú corregido */
+    #header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 5%;
+      transition: all 0.3s ease;
+    }
+    
+    .logo {
+      flex: 0 0 auto;
+    }
+    
+    .logo-link {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #1a365d;
+      text-decoration: none;
+    }
+    
+    #nav {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+    }
+    
+    .menu {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 30px;
+    }
+    
+    .menu li a {
+      text-decoration: none;
+      color: #2d3748;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+      padding: 8px 0;
+      position: relative;
+    }
+    
+    .menu li a:hover {
+      color: #1a365d;
+    }
+    
+    .menu li a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #1a365d;
+      transition: width 0.3s ease;
+    }
+    
+    .menu li a:hover::after {
+      width: 100%;
+    }
+    
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: #2d3748;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      
+      #nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+        transform: translateY(-10px);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+      
+      #nav.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+      
+      .menu {
+        flex-direction: column;
+        gap: 0;
+        padding: 20px 0;
+      }
+      
+      .menu li {
+        text-align: center;
+        padding: 12px 0;
+      }
+      
+      .menu li a {
+        display: block;
+        padding: 10px 20px;
+      }
+    }
+    
+    /* Ajuste para el contenido debajo del header fijo */
+    body {
+      padding-top: 80px;
+    }
+  </style>
 </head>
 
 <body>
@@ -15,13 +141,21 @@
   <section class="intro" id="intro">
     <div class="intro-content">
       <img id="logo" src="img/JUANRAMUN.png" alt="Logo JUANRAMUN">
+      <div class="intro-text">
+        <h1>JUANRAMUN 2025-26</h1>
+        <p>2ª Edición | Simulacro de Naciones Unidas</p>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Desplázate hacia abajo</span>
+      <i class="fas fa-chevron-down"></i>
     </div>
   </section>
 
-  <!-- Main Content -->
+  <!-- Header con menú corregido -->
   <header id="header">
     <div class="logo">
-      <a class='logo-link' href="#inicio">JUANRAMUN</a>
+      <a class='logo-link' href="index.html">JUANRAMUN</a>
     </div>
     
     <!-- Botón para desplegar el menú en móvil -->
@@ -29,104 +163,393 @@
       <i class="fas fa-bars"></i>
     </div>
     
-    <nav>
+    <nav id="nav">
       <ul class="menu">
-        <li><a href='index.html'>Home</a></li>
-        <li><a href='juanramun-2025.html'>JUANRAMUN 2025</a></li>
+        <li><a href='#inicio'>Inicio</a></li>
+        <li><a href='juanramun-2025.html'>JUANRAMUN 2025/26</a></li>
         <li><a href="comites.html">Comités</a></li>
         <li><a href='nuestro-equipo.html'>Nuestro equipo</a></li>
         <li><a href='contacto.html'>Contacto</a></li>
       </ul>
-    </nav>  </header>
+    </nav>
+  </header>
 
   <!-- Sección Inicio -->
   <section class="home" id="inicio">
     <div class="home-content">
-      <h1>¡Bienvenidos/as a la página web oficial del JUANRAMUN 2026!</h1>
-      <p>
-        Les damos la bienvenida al JUANRAMUN 2026, nuestro simulacro de Naciones Unidas, organizado por el Instituto
-        Español Juan Ramón Jiménez de Casablanca del 25 al 27 de enero de 2026.
-
-        Este evento les permitirá explorar la diplomacia y el debate internacional, desarrollar habilidades de liderazgo
-        y negociación, y abordar desafíos globales. Esperamos que esta experiencia les proporcione nuevos conocimientos
-        y oportunidades para hacer amistades y fomentar la colaboración.
-
-        ¡Bienvenidos a JUANRAMUN 2026!
-
-        <br>
-        <br>
-        
-        <img src="img/jr1.png" alt="JR" width="50%">
-
-        
+      <h1>Bienvenidos al JUANRAMUN 2026</h1>
+      <div class="divider"></div>
+      <p class="intro-paragraph">
+        Es un honor darles la bienvenida a la segunda edición del JUANRAMUN, el prestigioso simulacro de Naciones Unidas organizado por el Instituto Español Juan Ramón Jiménez de Casablanca. Del 25 al 27 de enero de 2025, jóvenes líderes como ustedes se reunirán para debatir los desafíos globales más apremiantes de nuestro tiempo.
       </p>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-globe-americas"></i>
+          </div>
+          <h3>Diplomacia Internacional</h3>
+          <p>Sumérgete en el mundo de las relaciones internacionales y desarrolla habilidades diplomáticas.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>Debate Constructivo</h3>
+          <p>Aprende a debatir de manera estructurada y respetuosa sobre temas de relevancia global.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <h3>Networking</h3>
+          <p>Conecta con estudiantes de diferentes instituciones y culturas para ampliar tu red de contactos.</p>
+        </div>
+      </div>
     </div>
   </section>
 
- 
-  <script src="script.js"></script>
+  <!-- Sección de Fechas Importantes -->
+  <section class="important-dates">
+    <div class="container">
+      <h2>Fechas Importantes</h2>
+      <div class="dates-timeline">
+        <div class="date-item">
+          <div class="date-circle">
+            <span class="date-day">15</span>
+            <span class="date-month">Nov</span>
+          </div>
+          <div class="date-content">
+            <h3>Apertura de Inscripciones</h3>
+            <p>Comienza el periodo de registro para delegados y facultades.</p>
+          </div>
+        </div>
+        
+        <div class="date-item">
+          <div class="date-circle">
+            <span class="date-day">1</span>
+            <span class="date-month">Dic</span>
+          </div>
+          <div class="date-content">
+            <h3>Cierre de Inscripciones</h3>
+            <p>Fecha límite para completar el proceso de registro.</p>
+          </div>
+        </div>
+        
+        <div class="date-item">
+          <div class="date-circle">
+            <span class="date-day">25</span>
+            <span class="date-month">Ene</span>
+          </div>
+          <div class="date-content">
+            <h3>Inauguración</h3>
+            <p>Ceremonia de apertura del JUANRAMUN 2025/26.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Comités Destacados -->
+  <section class="featured-committees">
+    <div class="container">
+      <h2>Comités Destacados</h2>
+      <p class="section-subtitle">Explora algunos de los comités que formarán parte del JUANRAMUN 2025</p>
+      
+      <div class="committees-grid">
+        <div class="committee-card">
+          <div class="committee-header">
+            <h3>Consejo de Seguridad</h3>
+            <span class="committee-level">Avanzado</span>
+          </div>
+          <div class="committee-content">
+            <p>Debate sobre la mantención de la paz y seguridad internacional.</p>
+            <a href="comites.html#consejo-seguridad" class="committee-link">Ver detalles <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        
+        <div class="committee-card">
+          <div class="committee-header">
+            <h3>UNESCO</h3>
+            <span class="committee-level">Intermedio</span>
+          </div>
+          <div class="committee-content">
+            <p>Discusión sobre educación, ciencia y cultura para el desarrollo sostenible.</p>
+            <a href="comites.html#unesco" class="committee-link">Ver detalles <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        
+        <div class="committee-card">
+          <div class="committee-header">
+            <h3>OMS</h3>
+            <span class="committee-level">Intermedio</span>
+          </div>
+          <div class="committee-content">
+            <p>Enfocado en desafíos de salud global y políticas sanitarias.</p>
+            <a href="comites.html#oms" class="committee-link">Ver detalles <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center">
+        <a href="comites.html" class="btn btn-outline">Ver todos los comités</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Testimonios -->
+  <section class="testimonials">
+    <div class="container">
+      <h2>Experiencias de Ediciones Anteriores</h2>
+      <div class="testimonials-slider">
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>"Participar en JUANRAMUN fue una experiencia transformadora. No solo mejoré mis habilidades de debate, sino que también hice amistades que perdurarán toda la vida."</p>
+          </div>
+          <div class="testimonial-author">
+            <h4>María González</h4>
+            <p>Delegada, JUANRAMUN 2024</p>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>"Como faculty advisor, he visto cómo mis estudiantes crecieron en confianza y capacidad de análisis. JUANRAMUN es una plataforma excepcional para el desarrollo juvenil."</p>
+          </div>
+          <div class="testimonial-author">
+            <h4>Carlos Rodríguez</h4>
+            <p>Faculty Advisor</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Introducción a Nuestro Equipo -->
+  <section class="team-preview">
+    <div class="container">
+      <div class="preview-content">
+        <div class="preview-text">
+          <h2>Conoce a Nuestro Equipo</h2>
+          <p>Detrás de JUANRAMUN 2025 hay un equipo dedicado de estudiantes apasionados que trabajan incansablemente para hacer de esta edición una experiencia inolvidable. Desde el Secretariado General hasta los comités de logística y comunicación, cada miembro contribuye con su talento y compromiso.</p>
+          
+          <div class="team-stats">
+            <div class="stat">
+              <span class="stat-number">20+</span>
+              <span class="stat-label">Miembros del equipo</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">8</span>
+              <span class="stat-label">Comités especializados</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Comprometidos</span>
+            </div>
+          </div>
+          
+          <a href="nuestro-equipo.html" class="btn btn-primary">
+            Conoce a todo el equipo <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Introducción al Contacto -->
+  <section class="contact-preview">
+    <div class="container">
+      <div class="contact-preview-content">
+        <div class="contact-info-preview">
+          <h2>¿Tienes Preguntas?</h2>
+          <p>Estamos aquí para ayudarte. No dudes en contactarnos para cualquier consulta sobre inscripciones, comités, patrocinios o cualquier aspecto del JUANRAMUN 2025.</p>
+          
+          <div class="contact-highlights">
+            <div class="contact-highlight">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <h4>Correo Electrónico</h4>
+                <p>juanramun00@gmail.com</p>
+              </div>
+            </div>
+            
+            <div class="contact-highlight">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <h4>Ubicación</h4>
+                <p>Instituto Juan Ramón Jiménez, Casablanca</p>
+              </div>
+            </div>
+            
+            <div class="contact-highlight">
+              <i class="fas fa-clock"></i>
+              <div>
+                <h4>Disponibilidad</h4>
+                <p>Atendemos consultas de lunes a viernes</p>
+              </div>
+            </div>
+          </div>
+          
+          <a href="contacto.html" class="btn btn-outline">
+            Más información de contacto <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        
+        <div class="contact-cta">
+          <div class="cta-card">
+            <h3>¿Listo para unirte?</h3>
+            <p>No esperes más para ser parte de esta experiencia única en diplomacia y liderazgo juvenil.</p>
+            <div class="cta-buttons">
+              <a href="contacto.html" class="btn btn-primary">Contáctanos</a>
+              <a href="juanramun-2025.html" class="btn btn-secondary">Más información</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // JavaScript para el menú móvil
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggle = document.getElementById('toggle');
+      const nav = document.getElementById('nav');
+      
+      if (toggle && nav) {
+        toggle.addEventListener('click', function() {
+          nav.classList.toggle('active');
+        });
+        
+        // Cerrar menú al hacer clic en un enlace (en móvil)
+        const menuLinks = document.querySelectorAll('.menu a');
+        menuLinks.forEach(link => {
+          link.addEventListener('click', function() {
+            if (window.innerWidth <= 768) {
+              nav.classList.remove('active');
+            }
+          });
+        });
+      }
+      
+      // Header scroll effect
+      const header = document.getElementById('header');
+      if (header) {
+        window.addEventListener('scroll', function() {
+          if (window.scrollY > 50) {
+            header.style.background = 'rgba(255, 255, 255, 0.98)';
+            header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+          } else {
+            header.style.background = 'rgba(255, 255, 255, 0.95)';
+            header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+          }
+        });
+      }
+    });
+  </script>
+
+  <!-- Pie de página -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-main">
+        <div class="footer-section">
+          <h3>JUANRAMUN 2025</h3>
+          <p>Simulacro de Naciones Unidas organizado por el Instituto Español Juan Ramón Jiménez de Casablanca.</p>
+          <div class="social-media">
+            <a href="https://snapchat.com/t/YO8oa9ia" target="_blank" class="social-icon">
+              <i class="fab fa-snapchat"></i>
+            </a>
+            <a href="https://www.instagram.com/juanramun1?igsh=cTV5YjNlZThkd3Zi" target="_blank" class="social-icon">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com/@juanramun_?_t=8qgN47Ls1Jd&_r=1" target="_blank" class="social-icon">
+              <i class="fab fa-tiktok"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Enlaces Rápidos</h4>
+          <ul class="footer-links">
+            <li><a href='#inicio'>Inicio</a></li>
+            <li><a href='juanramun-2025.html'>JUANRAMUN 2025</a></li>
+            <li><a href="comites.html">Comités</a></li>
+            <li><a href='nuestro-equipo.html'>Nuestro equipo</a></li>
+            <li><a href='contacto.html'>Contacto</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Contacto</h4>
+          <div class="contact-info">
+            <p><i class="fas fa-map-marker-alt"></i> Instituto Español Juan Ramón Jiménez, Casablanca</p>
+            <p><i class="fas fa-envelope"></i> juanramun00@gmail.com</p>
+            <p><i class="fas fa-calendar-alt"></i> 25-27 Enero, 2025</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Sección de los socios/partners -->
+      <div class="footer-partners">
+        <h4>Nuestros Socios</h4>
+        <div class="partners-grid">
+          <img src="img/AMPA SANS FOND.png" alt="Logo AMPA">
+          <img src="img/EMBAJADA.png" alt="Logo EMBAJADA">
+          <img src="img/JRJ SANS FOND.png" alt="Logo JRJ">
+          <img src="img/ESCA.png" alt="Logo ESCA">
+          <img src="img/ODS SANS FOND.png" alt="Logo ODS">
+        </div>
+      </div>
+
+      <!-- Sección para los patrocinadores clasificados por nivel -->
+      <div class="footer-sponsors">
+        <h4>Patrocinadores</h4>
+        
+        <!-- Patrocinadores Platino -->
+        <div class="sponsors platinum">
+          <h5>Patrocinadores Platino</h5>
+          <div class="sponsors-grid">
+            <img src="img/oneafrica.png" alt="Logo ONE AFRICA">
+            <img src="img/ie.png" alt="Logo IE UNIVERSITY">
+            <img src="img/acciona.png" alt="Logo ACCIONA">
+            <img src="img/coca.png" alt="Logo COCA COLA">
+            <img src="img/LOGO LEMO-2.png" alt="Logo LEMO">
+          </div>
+        </div>
+
+        <!-- Patrocinadores Oro -->
+        <div class="sponsors gold">
+          <h5>Patrocinadores Oro</h5>
+          <div class="sponsors-grid">
+            <img src="img/Logo_Sbayou.png" alt="Logo SBAYOU">
+          </div>
+        </div>
+
+        <!-- Patrocinadores Plata -->
+        <div class="sponsors silver">
+          <h5>Patrocinadores Plata</h5>
+          <div class="sponsors-grid">
+            <img src="img/Logo_Versalya-Italfarmaco.png" alt="LABO IBERMA VERSALYA">
+          </div>
+        </div>
+
+        <!-- Patrocinadores Bronce -->
+        <div class="sponsors bronze">
+          <h5>Patrocinadores Bronce</h5>
+          <div class="sponsors-grid">
+            <img src="img/cargotir.png" alt="Logo Patrocinador CARGOTIR">
+            <img src="img/caddyvoyages.png" alt="Logo Patrocinador CADDYVOYAGE">
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>JUANRAMUN 2025 © 2025 by Equipo del JuanRamun is licensed under CC BY-NC-ND 4.0</p>
+      </div>
+    </div>
+  </footer>
+
 </body>
 
-<!-- Pie de página -->
-<footer>
-  <div class="footer-content">
-    <p>JUANRAMUN 2026 © 2026 by Equipo del JuanRamun is licensed under CC BY-NC-ND 4.0</p>
-    <ul class="footer-links">
-      <li><a href='#inicio'>Inicio</a></li>
-      <li><a href='#equipo'>Sobre Nosotros</a></li>
-      <li><a href='#contacto'>Contacto</a></li>
-    </ul>
-    <div class="social-media">
-      <a href="https://snapchat.com/t/YO8oa9ia" target="_blank" class="social-icon">Snapchat</a>
-      <a href="https://www.instagram.com/juanramun1?igsh=cTV5YjNlZThkd3Zi" target="_blank" class="social-icon">Instagram</a>
-      <a href="https://www.tiktok.com/@juanramun_?_t=8qgN47Ls1Jd&_r=1" target="_blank" class="social-icon">Tiktok</a>
-    </div>
-
-    <!-- Sección de los socios/partners -->
-    <div class="footer-partners">
-      <img src="img/AMPA SANS FOND.png" alt="Logo AMPA">
-      <img src="img/EMBAJADA.png" alt="Logo EMBAJADA">
-      <img src="img/JRJ SANS FOND.png" alt="Logo JRJ">
-      <img src="img/ESCA.png" alt="Logo ESCA">
-      <img src="img/ODS SANS FOND.png" alt="Logo ODS">
-    </div>
-
-    <!-- Sección para los patrocinadores clasificados por nivel -->
-    <div class="footer-sponsors">
-      <!-- Patrocinadores Platino -->
-      <div class="sponsors platinum">
-        <h4>Patrocinadores Platino</h4>
-        <img src="img/oneafrica.png" alt="Logo ONE AFRICA">
-        <img src="img/ie.png" alt="Logo IE UNIVERSITY">
-        <img src="img/acciona.png" alt="Logo ACCIONA">
-        <img src="img/coca.png" alt="Logo COCA COLA">
-        <img src="img/LOGO LEMO-2.png" alt="Logo LEMO">
-      </div>
-
-      <!-- Patrocinadores Oro -->
-      <div class="sponsors gold">
-        <h4>Patrocinadores Oro</h4>
-        <img src="img/Logo_Sbayou.png" alt="Logo SBAYOU">
-      </div>
-
-      <!-- Patrocinadores Plata -->
-      <div class="sponsors silver">
-        <h4>Patrocinadores Plata</h4>
-        <img src="img/Logo_Versalya-Italfarmaco.png" alt="LABO IBERMA VERSALYA">
-      </div>
-
-      <!-- Patrocinadores Bronce -->
-      <div class="sponsors bronze">
-        <h4>Patrocinadores Bronce</h4>
-        <img src="img/cargotir.png" alt="Logo Patrocinador CARGOTIR">
-        <img src="img/caddyvoyages.png" alt="Logo Patrocinador CADDYVOYAGE">
-      </div>
-    </div>
-  </div>
-</footer>
-
-
 </html>
-
-
-
